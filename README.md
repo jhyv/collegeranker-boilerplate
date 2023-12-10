@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# Take home interview
+## The Setup
+Navigate [here]() to find the repository.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fork it into your personal github, and see what we'd like you to implement below. Note that we don't wish this to take more than 2 hours of work at maximum - so please do use a component library like material or bootstrap or whichever you choose, so you don't have to code these individual components from scratch.
 
-## Available Scripts
+## The Task
+We'd like you to implement the mock-up below:
 
-In the project directory, you can run:
+![The mockup to implement](mockup.png)
 
-### `npm start`
+More information is given on the three sections below. While you work, remember: what we're looking for is your ability to (1) retrieve and render information from an API, (2) craft visual elements that have a cohesive design and intuitive layout, and (3) the small touches that make a website's appearance go from complete to professional. How you get there is up to you! (And really, don't forget to use a component libary otherwise this'd take way too long).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Your code will be written within `./pages/CollegeView.tsx`:
+```
+./src/
+├── components/
+├── pages/
+│   └── CollegeView.tsx
+└── App.tsx
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Sections A, B, and C: What we want you to implement
+#### A: College NavBar
+A navbar with different colleges as options. Use real college names by extracting the 'instnm' field from the list of colleges returned from [https://real-ranker-backend.com/data](https://real-ranker-backend.com/data)
+#### B: College Information Pane
+An informational pane for a college, with text on the left and grades in different categories on the right. You may use lorem ipsum for the filler and can have static or randomly generated grades, its the way you present information and how it looks together that counts for this pane in particular.
+#### C: i button pop-outs
+For each category that a college has, place an i button that:
+- on-hover: has a sentence explanation on-hover
+- on-click: has a modal pop-out with a paragraph explanation
 
-### `npm test`
+The explanations themselves won't be evaluated, so you can use lorem ipsum no problem. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## To run a local instance:
+`npm start`
