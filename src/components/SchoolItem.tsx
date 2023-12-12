@@ -19,7 +19,11 @@ const useStyles = makeStyles(
             padding: '10px',
             userSelect: 'none',
             cursor: 'pointer',
-            transition: '0.3s ease-in-out'
+            transition: '0.3s ease-in-out',
+            "&:first-child": {
+                marginLeft: '30px'
+            }
+
         },
         schoolIcon: {
             height: '100px',
@@ -42,7 +46,7 @@ function SchoolItem({ school, currentSchool, onClick }: SchoolItemProps) {
     const classes = useStyles();
     const onSchoolSelect = () => {
         currentSchool && school.name === currentSchool.name ? onClick(null) : onClick(school);
-        const el = document.getElementById(getSchoolId());
+        const el: any = document.getElementById(getSchoolId());
         el?.scrollIntoView({
             behavior: 'smooth',
             block: 'end',

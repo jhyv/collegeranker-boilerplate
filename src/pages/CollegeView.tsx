@@ -6,12 +6,23 @@ import SchoolContainer from '../components/SchoolContainer';
 const useStyles = makeStyles(
     theme => ({
         pageContainer: {
-            height: 'calc(100% - 10px)',
-            width: '80%',
+            [theme.breakpoints.down('md')]: {
+                width: '100%',
+                overflow: 'auto',
+                padding: '20px 0',
+            },
+            [theme.breakpoints.up('md')]: {
+                width: '90%',
+                height: 'calc(100% - 20px)',
+                padding: '20px 10px',
+            },
+            [theme.breakpoints.up('lg')]: {
+                width: '80%',
+            },
+            height: 'auto',
             boxShadow: '0px 3px 5px rgba(0,0,0,0.3)',
-            padding: '20px 10px',
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
         }
     })
 )

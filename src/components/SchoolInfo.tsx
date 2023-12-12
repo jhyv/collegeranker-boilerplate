@@ -3,8 +3,15 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles(
     theme => ({
         schoolInfoContainer: {
-            width: '50%',
-            height: '100%',
+            [theme.breakpoints.up('md')]: {
+                width: '50%',
+                height: '100%',
+            },
+            [theme.breakpoints.down('md')]: {
+                width: '100%',
+                height: 'auto',
+                marginBottom: '20px'
+            },
             display: 'flex',
             alignItems: 'flex-start',
             justifyContent: 'center',

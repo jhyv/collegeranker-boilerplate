@@ -1,5 +1,5 @@
 
-import React, { useReducer } from 'react';
+import React from 'react';
 import './App.css';
 import { makeStyles } from "@material-ui/core";
 import CollegeView from './pages/CollegeView';
@@ -16,19 +16,28 @@ const useStyles = makeStyles(
       height: '100vh',
       width: '100vw'
     },
-    "@global": {
-      "*::-webkit-scrollbar": {
-        width: 7,
-      },
-      "*::-webkit-scrollbar-track": {
-        boxShadow: `inset 0 0 6px rgba(0, 0, 0, 0.3)`,
-      },
-      "*::-webkit-scrollbar-thumb": {
-        backgroundColor: "darkgrey",
+    [theme.breakpoints.up('md')]: {
+      "@global": {
+        "*::-webkit-scrollbar": {
+          width: 7,
+        },
+        "*::-webkit-scrollbar-track": {
+          boxShadow: `inset 0 0 6px rgba(0, 0, 0, 0.3)`,
+        },
+        "*::-webkit-scrollbar-thumb": {
+          backgroundColor: "darkgrey",
 
-        borderRadius: '5px',
-        outline: `1px solid slategrey`,
-      },
+          borderRadius: '5px',
+          outline: `1px solid slategrey`,
+        },
+      }
+    },
+    [theme.breakpoints.down('md')]: {
+      "@global": {
+        "*::-webkit-scrollbar": {
+          display: 'none',
+        }
+      }
     }
   })
 );
