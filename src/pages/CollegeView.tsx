@@ -6,10 +6,10 @@ import SchoolContainer from '../components/SchoolContainer';
 const useStyles = makeStyles(
     theme => ({
         pageContainer: {
-            [theme.breakpoints.down('md')]: {
+            [theme.breakpoints.down('sm')]: {
                 width: '100%',
-                overflow: 'auto',
                 padding: '20px 0',
+                overflow: 'auto',
             },
             [theme.breakpoints.up('md')]: {
                 width: '90%',
@@ -19,10 +19,11 @@ const useStyles = makeStyles(
             [theme.breakpoints.up('lg')]: {
                 width: '80%',
             },
+            overflow: 'hidden',
             height: 'auto',
             boxShadow: '0px 3px 5px rgba(0,0,0,0.3)',
-            display: 'flex',
-            flexDirection: 'column',
+            // display: 'flex',
+            // flexDirection: 'column',
         }
     })
 )

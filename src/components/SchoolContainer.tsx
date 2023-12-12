@@ -13,16 +13,19 @@ const useStyles = makeStyles(
     theme => ({
         schoolContainer: {
             [theme.breakpoints.up('md')]: {
+                height: '80vh',
             },
             [theme.breakpoints.down('md')]: {
                 height: '100vh',
             },
             flexGrow: 1,
-            padding: '10px'
+            overflow: 'hidden',
+            position: 'relative',
         },
         schoolHeader: {
             height: '60px',
             width: '100%',
+            padding: '20px 10px',
         },
         schoolHeaderTitle: {
             margin: 0,
@@ -52,12 +55,13 @@ const useStyles = makeStyles(
         },
         schoolFooter: {
             backgroundColor: theme.palette.primary.main,
-            width: 'calc(100% + 20px)',
             height: '120px',
             padding: '10px',
             transition: '0.3s linear',
             [theme.breakpoints.up('sm')]: {
-                transform: 'translate(-20px,120px)'
+                position: 'absolute',
+                bottom: '-140px',
+                left: '0'
             },
             [theme.breakpoints.down('sm')]: {
                 position: 'fixed',
@@ -69,7 +73,7 @@ const useStyles = makeStyles(
         },
         schoolFooterShow: {
             [theme.breakpoints.up('sm')]: {
-                transform: 'translate(-20px,-120px)'
+                transform: 'translate(0,-265px)'
             },
             [theme.breakpoints.down('sm')]: {
                 transform: 'translateY(-100vh)'
@@ -83,10 +87,6 @@ function SchoolContainer({ currentSchool }: SchoolContainerProps) {
     const [showPanel, setShowPanel] = useState(false);
     const [showDialog, setShowDialog] = useState(false);
 
-    useEffect(() => {
-        setShowPanel(!!currentSchool);
-    }, [currentSchool])
-
     return (
         <div className={classes.schoolContainer}>
             <Fade in={!!currentSchool}>
@@ -96,8 +96,8 @@ function SchoolContainer({ currentSchool }: SchoolContainerProps) {
                             <h2 className={classes.schoolHeaderTitle}>{currentSchool.name}</h2>
                         </div>
                         <div className={classes.schoolDetails}>
-                            <SchoolInfo />
-                            <SchoolGrades />
+                            <SchoolInfo currentSchool={currentSchool} />
+                            <SchoolGrades showPanel={setShowPanel} />
                         </div>
                     </div> :
                     <div className={classes.schoolInfo}>

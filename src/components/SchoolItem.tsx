@@ -9,20 +9,17 @@ interface SchoolItemProps {
 const useStyles = makeStyles(
     theme => ({
         schoolItem: {
-            display: 'inline',
-            minWidth: '400px',
+            width: '100%',
             height: '100%',
-            marginRight: '20px',
-            whiteSpace: 'nowrap',
             backgroundColor: theme.palette.primary.main,
-            borderRadius: '5px',
-            padding: '10px',
+            borderRadius: '10px',
+            // padding: '10px',
             userSelect: 'none',
             cursor: 'pointer',
             transition: '0.3s ease-in-out',
-            "&:first-child": {
-                marginLeft: '30px'
-            }
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
 
         },
         schoolIcon: {
