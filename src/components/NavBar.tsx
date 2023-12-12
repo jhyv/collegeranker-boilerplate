@@ -8,18 +8,17 @@ const useStyles = makeStyles(
         navBarContainer: {
             width: '100%',
             height: '200px',
-            border: '1px solid red',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'flex-start',
             overflowX: 'auto',
             overflowY: 'hidden',
-            padding: '10px 0'
+            padding: '20px 0'
         }
     })
 )
 
-function NavBar() {
+function NavBar({ currentSchool, setCurrentSchool }: any) {
     const classes = useStyles();
     const [schools, setSchools] = useState([]);
 
@@ -37,7 +36,12 @@ function NavBar() {
             {
                 schools.map((school: any) => {
                     return (
-                        <SchoolItem school={school} key={`schoolItem${school.name.replace(/ /g, '')}`} />
+                        <SchoolItem
+                            school={school}
+                            currentSchool={currentSchool}
+                            onClick={setCurrentSchool}
+                            key={`schoolItem${school.name.replace(/ /g, '')}`}
+                        />
                     )
                 })
             }
